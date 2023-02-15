@@ -41,4 +41,10 @@ public class Titular {
 	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
+
+	@Override
+	public String toString() {
+		return "Titular [nome=" + nome + ", cpf=" + cpf + ", telefone=" + telefone + ", nascimento=" + nascimento + "]";
+	}
+	
 }

@@ -2,8 +2,9 @@
 public class ContaCorrente extends ContaBancaria{
 	
 	
-	public ContaCorrente(Titular titular, String numeroConta, String numeroAgencia, double saldo, boolean status) {
-		super(titular, numeroConta, numeroAgencia, saldo, status);
+	public ContaCorrente(Titular titular, String numeroConta) {
+		
+		super(titular, numeroConta, "3104", 200, true);
 	}
 
 	public final void pagarMensalidade() {
