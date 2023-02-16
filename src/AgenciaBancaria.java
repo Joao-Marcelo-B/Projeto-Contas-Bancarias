@@ -13,11 +13,24 @@ public class AgenciaBancaria {
 		cadastrarTitular();
 		cadastrarContaCorrente();
 	}
+
+	public static void operacoes() {
+		int operacoes;
+		System.out.println("=====================");
+		System.out.println("Menu de opcoes");
+		System.out.println("=====================");
+		System.out.println("1 - Cadastrar nova conta.");
+		System.out.println("Digite a opcao desejada: ");
+		operacoes = scan.nextInt();
+
+		switch(operacoes) {
+			case 1:
+				cadastrarContaCorrente();
+			break;
+		}
+	}
 	
 	public static void cadastrarTitular() {
-		System.out.println("===========================");
-		System.out.println("Cadastrando Conta");
-		System.out.println("===========================");
 		System.out.print("Digite o nome do titular: ");
 		String nome = scan.nextLine();
 		System.out.print("Digite o CPF do titular: ");
@@ -32,6 +45,7 @@ public class AgenciaBancaria {
 	}
 	
 	public static void cadastrarContaCorrente() {
+		cadastrarTitular();
 		Random aleatorio = new Random();
 		String numeroConta = "";
 		for(int cont = 0; cont < 4; cont++) {
@@ -43,4 +57,9 @@ public class AgenciaBancaria {
 		contaBancaria.add(contaCorrente);
 	}
 
+	public static void clearBuffer(Scanner scan) {
+		if(scan.hasNextLine()) {
+			scan.nextLine();
+		}
+	}
 }
